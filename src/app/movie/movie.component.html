@@ -1,0 +1,13 @@
+<div class="card text-center" id={{movie.id}}>
+  <div class="img-container">
+    <img class="card-img-top" src={{movie.img}} alt="movie" />
+  </div>
+  <div class="card-block">
+    <div class="card-text" ngClass="movie-price">${{movie.price}}</div>
+    <h4 class="card-title" ngClass="movie-title">{{movie.title}}
+      <span ngClass="movie-year">({{movie.year}})</span>
+    </h4>
+    <div class="card-text" ngClass="movie-description">{{movie.descrShort}}</div>
+    <button type="button" class="btn btn-primary">Add</button>
+  </div>
+</div>

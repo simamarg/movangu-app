@@ -1,0 +1,35 @@
+.card {
+    width: 300px;
+    height: 480px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.card-block {
+    padding: 10px;
+}
+
+img {
+    width: 100%;
+}
+
+.movie-price {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-weight: bold;
+    color: white;
+    background-color: #f44336;
+    width: 50px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.card-text {
+    margin-bottom: 10px;
+}
+
+.img-container {
+    overflow: hidden;
+    height: 150px;
+}
