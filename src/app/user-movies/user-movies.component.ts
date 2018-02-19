@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
+import { Movie } from '../models/movie';
 
 @Component({
   selector: 'app-user-movies',
@@ -6,12 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-movies.component.css']
 })
 export class UserMoviesComponent implements OnInit {
+  movies: Movie[];
   title: string;
+  buttonText: string;
+  buttonsDisplayed: {val: boolean};
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
     this.title = "My movies";
+    this.movies = this.userService.getUserMovies();
+    this.buttonText = "Remove";
+    this.buttonsDisplayed = {val: false};
   }
 
+  removeMovie(movie: Movie) {
+    this.userService.removeMovie(movie);
+  }
+
+  showButtons() {
+    this.buttonsDisplayed.val = !this.buttonsDisplayed.val;
+  }
 }

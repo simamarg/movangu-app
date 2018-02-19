@@ -1,3 +1,40 @@
+.all-movies-wrapper {
+    background-color: rgba(214, 215, 216, 0.7);
+    margin-top: 30px;
+    padding-bottom: 20px;
+    border-radius: 0.25rem;
+    margin-bottom: 20px;
+}
+
 .all-movies-container {
     padding: 0 20px;
 }
+
+h1 {
+    margin-top: 55px;
+    padding-bottom: 20px;
+    color: #343a40;
+    font-family: 'Pacifico', Helvetica, sans-serif;
+}
+
+.form-control {
+    margin: auto;
+    width: 300px;
+    display: inline-flex;
+}
+
+.card-deck {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* .btn-outline-secondary {
+    border: none;
+}
+
+.btn-outline-secondary:focus {
+    outline: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+} */

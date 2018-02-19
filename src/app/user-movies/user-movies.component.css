@@ -1,3 +1,43 @@
+.user-movies-wrapper {
+    background-color: rgba(214, 215, 216, 0.7);
+    margin-top: 30px;
+    padding-bottom: 20px;
+    border-radius: 0.25rem;
+}
+
 .user-movies-container {
     padding: 0 20px;
+}
+
+h1 {
+    margin-top: 55px;
+    padding-bottom: 20px;
+    color: #343a40;
+    font-family: 'Pacifico', Helvetica, sans-serif;
+}
+
+.form-control {
+    margin: auto;
+    width: 300px;
+    display: inline-flex;
+}
+
+.no-movies {
+    color: #343a40;
+    height: 150px;
+    padding-top: 50px;
+}
+
+.card-deck {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.edit-button {
+    display: inline-flex;
+    vertical-align: top;
+    margin-left: 20px;
+    width: 135px;
+    justify-content: center;
 }

@@ -1,27 +1,37 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
+
+import { FilterPipe} from './filter.pipe';
+import { AppDataService } from './app-data.service';
+import { UserService } from './user.service';
 
 import { AppComponent } from './app.component';
-import { AppDataService } from './app-data.service';
 import { AllMoviesComponent } from './all-movies/all-movies.component';
 import { UserMoviesComponent } from './user-movies/user-movies.component';
-import { MovieListComponent } from './movie-list/movie-list.component';
 import { MovieComponent } from './movie/movie.component';
+import { NavComponent } from './nav/nav.component';
+import { MovieExtendedComponent } from './movie-extended/movie-extended.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    FilterPipe,
     AllMoviesComponent,
     UserMoviesComponent,
-    MovieListComponent,
-    MovieComponent
+    MovieComponent,
+    NavComponent,
+    MovieExtendedComponent
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [AppDataService],
+  providers: [AppDataService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,26 @@
-<div class="all-movies-container">
-  <h1>{{title}}</h1>
-  <app-movie-list></app-movie-list>
+<div class="all-movies-wrapper">
+  <div class="all-movies-container row" id="all-movies">
+    <div class="col">
+      <h1>{{title}}</h1>
+
+      <input [(ngModel)]="searchText" type="text" class="form-control" placeholder="Search by title...">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card-deck">
+      <app-movie [movie]="movie" [buttonText]="buttonText" [buttonsDisplayed]="buttonsDisplayed" 
+      (onButtonClick)="addMovie($event)" *ngFor="let movie of movies | filter : searchText"></app-movie>
+
+      <!-- <button type="button" class="btn btn-outline-secondary" (click)="changeView(-1)">
+      <i class="fa fa-chevron-left"></i>
+    </button>
+    <app-movie [movie]="movie" [buttonText]="buttonText" (onButtonClick)="addMovie($event)" 
+      *ngFor="let movie of movies | slice: start : end">
+    </app-movie>
+    <button type="button" class="btn btn-outline-secondary" (click)="changeView(1)">
+      <i class="fa fa-chevron-right"></i>
+    </button> -->
+    </div>
+  </div>
 </div>
