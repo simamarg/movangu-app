@@ -8,7 +8,9 @@
     <div class="full-description">{{movie.fullDescription}}</div>
     <div class="buttons-box">
       <a class="btn btn-outline-secondary" routerLink="/">Go back</a>
-      <button type="button" class="btn btn-info" (click)="handleClick()">Buy for ${{movie.price}}</button>
+      <button type="button" class="btn btn-info" (click)="handleClick()">
+        {{buy ? "Buy for $" + movie.price : "Remove"}}
+      </button>
     </div>
   </div>
 </div>

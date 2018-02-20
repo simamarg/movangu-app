@@ -9,18 +9,8 @@
 
   <div class="row">
     <div class="card-deck">
-      <app-movie [movie]="movie" [buttonText]="buttonText" [buttonsDisplayed]="buttonsDisplayed" 
+      <app-movie [movie]="movie" [buy]="buy" [buttonsDisplayed]="buttonsDisplayed" 
       (onButtonClick)="addMovie($event)" *ngFor="let movie of movies | filter : searchText"></app-movie>
-
-      <!-- <button type="button" class="btn btn-outline-secondary" (click)="changeView(-1)">
-      <i class="fa fa-chevron-left"></i>
-    </button>
-    <app-movie [movie]="movie" [buttonText]="buttonText" (onButtonClick)="addMovie($event)" 
-      *ngFor="let movie of movies | slice: start : end">
-    </app-movie>
-    <button type="button" class="btn btn-outline-secondary" (click)="changeView(1)">
-      <i class="fa fa-chevron-right"></i>
-    </button> -->
     </div>
   </div>
 </div>

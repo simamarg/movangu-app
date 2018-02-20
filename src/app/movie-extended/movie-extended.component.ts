@@ -11,6 +11,7 @@ import { Movie } from '../models/movie';
 })
 export class MovieExtendedComponent implements OnInit {
   movie: Movie = new Movie();
+  buy: boolean;
 
   constructor(private appDataService: AppDataService, private userService: UserService, private route: ActivatedRoute,
     private router: Router) { }
@@ -21,10 +22,17 @@ export class MovieExtendedComponent implements OnInit {
         this.movie = data;
       });
     });
+    this.route.queryParams.subscribe(queryParams => {
+      queryParams.buy === "true" ? this.buy = true : this.buy = false;
+    });
   }
 
   handleClick() {
-    this.userService.addMovie(this.movie);
+    if (this.buy) {
+      this.userService.addMovie(this.movie);
+    } else {
+      this.userService.removeMovie(this.movie);
+    }
     this.router.navigate(['/']);
   }
 }

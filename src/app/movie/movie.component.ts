@@ -9,7 +9,7 @@ import { Movie } from '../models/movie';
 })
 export class MovieComponent implements OnInit {
   @Input() movie: Movie;
-  @Input() buttonText: {text: string};
+  @Input() buy: boolean;
   @Input() buttonsDisplayed: {val: string};
   @Output() onButtonClick: EventEmitter<Movie> = new EventEmitter();
 

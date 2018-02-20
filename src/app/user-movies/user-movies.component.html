@@ -5,7 +5,7 @@
 
       <input [(ngModel)]="searchText" type="text" class="form-control" placeholder="Search by title...">
       
-      <button type="button" class="btn btn-info edit-button" (click)="showButtons()">
+      <button type="button" class="btn btn-info edit-button" (click)="toggleButtons()">
         {{buttonsDisplayed.val ? "Close edit" : "Edit my movies"}}
       </button>
 
@@ -15,7 +15,7 @@
 
   <div class="row">
     <div class="card-deck">
-      <app-movie [movie]="movie" [buttonText]="buttonText" [buttonsDisplayed]="buttonsDisplayed"
+      <app-movie [movie]="movie" [buy]="buy" [buttonsDisplayed]="buttonsDisplayed"
       (onButtonClick)="removeMovie($event)" *ngFor="let movie of movies | filter : searchText"></app-movie>
     </div>
   </div>

@@ -10,7 +10,7 @@ import { Movie } from '../models/movie';
 export class UserMoviesComponent implements OnInit {
   movies: Movie[];
   title: string;
-  buttonText: string;
+  buy: boolean;
   buttonsDisplayed: {val: boolean};
 
   constructor(private userService: UserService) { }
@@ -18,7 +18,7 @@ export class UserMoviesComponent implements OnInit {
   ngOnInit() {
     this.title = "My movies";
     this.movies = this.userService.getUserMovies();
-    this.buttonText = "Remove";
+    this.buy = false;
     this.buttonsDisplayed = {val: false};
   }
 
@@ -26,7 +26,7 @@ export class UserMoviesComponent implements OnInit {
     this.userService.removeMovie(movie);
   }
 
-  showButtons() {
+  toggleButtons() {
     this.buttonsDisplayed.val = !this.buttonsDisplayed.val;
   }
 }
