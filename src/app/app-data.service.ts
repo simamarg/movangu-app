@@ -14,4 +14,8 @@ export class AppDataService {
   getMovies(): Observable<Movie[]> {
     return this.http.get<Movie[]>('https://anguflix-api.herokuapp.com/api/movies');
   }
+
+  getMovieById(id: string): Observable<Movie> {
+    return this.http.get<Movie>(`https://anguflix-api.herokuapp.com/api/movies/${id}`);
+  }
 }

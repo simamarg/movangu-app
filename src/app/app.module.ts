@@ -14,6 +14,8 @@ import { UserMoviesComponent } from './user-movies/user-movies.component';
 import { MovieComponent } from './movie/movie.component';
 import { NavComponent } from './nav/nav.component';
 import { MovieExtendedComponent } from './movie-extended/movie-extended.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -24,12 +26,14 @@ import { MovieExtendedComponent } from './movie-extended/movie-extended.componen
     UserMoviesComponent,
     MovieComponent,
     NavComponent,
-    MovieExtendedComponent
+    MovieExtendedComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [AppDataService, UserService],
   bootstrap: [AppComponent]

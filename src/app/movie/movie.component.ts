@@ -21,4 +21,8 @@ export class MovieComponent implements OnInit {
   handleClick() {
     this.onButtonClick.emit(this.movie);
   }
+
+  getMovie() {
+    return this.movie;
+  }
 }
