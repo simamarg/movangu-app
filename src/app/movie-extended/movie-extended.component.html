@@ -6,6 +6,9 @@
     <h3 class="title">{{movie.title}}</h3>
     <div class="director-year">Director: {{movie.director}} | Released: {{movie.year}}</div>
     <div class="full-description">{{movie.fullDescription}}</div>
-    <button type="button" class="btn btn-info" (click)="handleClick()">Buy for ${{movie.price}}</button>
+    <div class="buttons-box">
+      <a class="btn btn-outline-secondary" routerLink="/">Go back</a>
+      <button type="button" class="btn btn-info" (click)="handleClick()">Buy for ${{movie.price}}</button>
+    </div>
   </div>
 </div>
