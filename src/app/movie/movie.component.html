@@ -8,7 +8,7 @@
       <span ngClass="movie-year">({{movie.year}})</span>
     </h5>
     <div class="card-text" ngClass="movie-description">
-      {{movie.shortDescription}} <a [routerLink]="['movie', movie._id]">Read more</a>
+      {{movie.shortDescription}} <a [routerLink]="['movie', movie._id]">Read more...</a>
     </div>
   </div>
   <div type="button" class="movie-button card-footer" (click)="handleClick()" *ngIf="buttonsDisplayed.val">{{buttonText}}</div>

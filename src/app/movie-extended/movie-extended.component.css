@@ -1,0 +1,41 @@
+.movie-container {
+    background-color: #fff;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 10px;
+    border-radius: 0.25rem;
+    font-family: 'Libre Franklin', sans-serif;
+    text-align: left;
+}
+
+.movie-left {
+    order: 1;
+}
+
+.movie-left img {
+    border-radius: 0.25rem;
+    min-width: 300px;
+    max-width: 330px;
+}
+
+.movie-right {
+    order: 2;
+    flex: 2 0px;
+    padding: 20px;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.director-year {
+    font-weight: bold;
+}
+
+.full-description {
+    padding: 10px 0;
+    font-size: 0.9rem;
+}

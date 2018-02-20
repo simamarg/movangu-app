@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AppDataService } from '../app-data.service';
+import { UserService } from '../user.service';
+import { Movie } from '../models/movie';
 
 @Component({
   selector: 'app-movie-extended',
@@ -7,14 +10,21 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./movie-extended.component.css']
 })
 export class MovieExtendedComponent implements OnInit {
-  id: string;
+  movie: Movie = new Movie();
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private appDataService: AppDataService, private userService: UserService, private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.id = params.id;
+      this.appDataService.getMovieById(params.id).subscribe(data => {
+        this.movie = data;
+      });
     });
   }
 
+  handleClick() {
+    this.userService.addMovie(this.movie);
+    this.router.navigate(['/']);
+  }
 }

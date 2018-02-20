@@ -1,3 +1,20 @@
-<div>
-  My movie id is: {{id}}
+<div class="movie-container">
+  <div class="movie-left">
+    <img src="{{movie.imgUrl}}" />
+  </div>
+  <div class="movie-right">
+    <h3 class="title">{{movie.title}}</h3>
+    <div class="director-year">Director: {{movie.director}} | Released: {{movie.year}}</div>
+    <div class="full-description">{{movie.fullDescription}}</div>
+    <button type="button" class="btn btn-info" (click)="handleClick()">Buy for ${{movie.price}}</button>
+  </div>
 </div>
+
+
+<!-- export class Movie {
+
+    shortDescription: string; //
+    fullDescription: string;
+    director: string;
+    reviews: any[]
+} -->
